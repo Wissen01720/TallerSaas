@@ -87,3 +87,31 @@ folium.Circle(
 # Guardar el mapa como HTML
 mapa.save("mapa_clima.html")
 print("\n ¡Mapa generado! Abrir el archivo mapa_clima.html en tu navegador.")
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+import datetime
+ 
+# Cargar las credenciales desde el archivo JSON descargado
+cred = credentials.Certificate("clave.json")
+firebase_admin.initialize_app(cred)
+ 
+# Conectar con Firestore
+db = firestore.client()
+ 
+# Crear el documento con los datos de la consulta
+consulta = {
+    "ciudad":      ciudad,
+    "temperatura": temp,
+    "humedad":     humedad,
+    "descripcion": descripcion,
+    "viento_ms":   viento,
+    "latitud":     lat,
+    "longitud":    lon,
+    "timestamp":   datetime.datetime.now().isoformat()
+}
+ 
+# Guardar en la colección 'consultas_clima'
+db.collection("consultas_clima").add(consulta)
+print("\n Consulta guardada en Firebase Firestore.")
+print("   Ir a la consola de Firebase para verla en tiempo real.")
