@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_af32cf0e58fe00c74d40591d46ea1db8 {
+                #map_9f10595586fc1f5dc1a56d3aeff35dbc {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,16 +54,16 @@
 <body>
     
     
-            <div class="folium-map" id="map_af32cf0e58fe00c74d40591d46ea1db8" ></div>
+            <div class="folium-map" id="map_9f10595586fc1f5dc1a56d3aeff35dbc" ></div>
         
 </body>
 <script>
     
     
-            var map_af32cf0e58fe00c74d40591d46ea1db8 = L.map(
-                "map_af32cf0e58fe00c74d40591d46ea1db8",
+            var map_9f10595586fc1f5dc1a56d3aeff35dbc = L.map(
+                "map_9f10595586fc1f5dc1a56d3aeff35dbc",
                 {
-                    center: [4.6097, -74.0817],
+                    center: [6.2518, -75.5636],
                     crs: L.CRS.EPSG3857,
                     ...{
   "zoom": 12,
@@ -78,7 +78,7 @@
 
         
     
-            var tile_layer_a1a7dfd9fdb0bc03f05fbaf1f042d328 = L.tileLayer(
+            var tile_layer_9c1013898dcecd33ac22a8935be8e5ed = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -95,17 +95,17 @@
             );
         
     
-            tile_layer_a1a7dfd9fdb0bc03f05fbaf1f042d328.addTo(map_af32cf0e58fe00c74d40591d46ea1db8);
+            tile_layer_9c1013898dcecd33ac22a8935be8e5ed.addTo(map_9f10595586fc1f5dc1a56d3aeff35dbc);
         
     
-            var marker_36fe044e055728874653c208fa260eeb = L.marker(
-                [4.6097, -74.0817],
+            var marker_20b0ddd7ff304eed78ad8455d4c89a7d = L.marker(
+                [6.2518, -75.5636],
                 {
 }
-            ).addTo(map_af32cf0e58fe00c74d40591d46ea1db8);
+            ).addTo(map_9f10595586fc1f5dc1a56d3aeff35dbc);
         
     
-            var icon_92d454bed513b58a5ff436845acba39c = L.AwesomeMarkers.icon(
+            var icon_6441bc61c0ad7edb584ed9c20fa55014 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -116,26 +116,26 @@
             );
         
     
-        var popup_940909768c4f3c481d7d48423a8c4e1c = L.popup({
+        var popup_3008f123b6b50b8048b59c815e4fd7e9 = L.popup({
   "maxWidth": 250,
 });
 
         
             
-                var html_592f7df125ec09ee0c93f45d7753a916 = $(`<div id="html_592f7df125ec09ee0c93f45d7753a916" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; font-size:14px; padding:8px'>         <b>Bogota</b><br>         Temperatura: 14.61 °C<br>         Humedad: 78%<br>         niebla     </div> </div>`)[0];
-                popup_940909768c4f3c481d7d48423a8c4e1c.setContent(html_592f7df125ec09ee0c93f45d7753a916);
+                var html_d01631f24d260d380dff56e700423f95 = $(`<div id="html_d01631f24d260d380dff56e700423f95" style="width: 100.0%; height: 100.0%;">     <div style='font-family:Arial; font-size:14px; padding:8px'>         <b>Medellín</b><br>         Temperatura: 23.46 °C<br>         Humedad: 61%<br>         muy nuboso     </div> </div>`)[0];
+                popup_3008f123b6b50b8048b59c815e4fd7e9.setContent(html_d01631f24d260d380dff56e700423f95);
             
         
 
-        marker_36fe044e055728874653c208fa260eeb.bindPopup(popup_940909768c4f3c481d7d48423a8c4e1c)
+        marker_20b0ddd7ff304eed78ad8455d4c89a7d.bindPopup(popup_3008f123b6b50b8048b59c815e4fd7e9)
         ;
 
         
     
     
-            marker_36fe044e055728874653c208fa260eeb.bindTooltip(
+            marker_20b0ddd7ff304eed78ad8455d4c89a7d.bindTooltip(
                 `<div>
-                     Bogota — Click para ver clima
+                     Medellín — Click para ver clima
                  </div>`,
                 {
   "sticky": true,
@@ -143,13 +143,13 @@
             );
         
     
-                marker_36fe044e055728874653c208fa260eeb.setIcon(icon_92d454bed513b58a5ff436845acba39c);
+                marker_20b0ddd7ff304eed78ad8455d4c89a7d.setIcon(icon_6441bc61c0ad7edb584ed9c20fa55014);
             
     
-            var circle_2475fd1959a5a19a1f8ada2fda3ff360 = L.circle(
-                [4.6097, -74.0817],
+            var circle_8c10deb89444809172dd345b5926013d = L.circle(
+                [6.2518, -75.5636],
                 {"bubblingMouseEvents": true, "color": "#2563EB", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563EB", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5000, "stroke": true, "weight": 3}
-            ).addTo(map_af32cf0e58fe00c74d40591d46ea1db8);
+            ).addTo(map_9f10595586fc1f5dc1a56d3aeff35dbc);
         
 </script>
 </html>

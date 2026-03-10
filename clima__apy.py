@@ -118,3 +118,23 @@ consulta = {
 db.collection("consultas_clima").add(consulta)
 print("\n Consulta guardada en Firebase Firestore.")
 print("   Ir a la consola de Firebase para verla en tiempo real.")
+
+
+# Obtener y mostrar un chiste al final de la ejecución
+print("\nBuscando un chiste...")
+try:
+    joke_url = "https://v2.jokeapi.dev/joke/Any?lang=es"
+    joke_response = requests.get(joke_url, timeout=10)
+    joke_response.raise_for_status()
+    joke_data = joke_response.json()
+
+    if joke_data.get("error"):
+        print("\n No se pudo obtener un chiste en este momento.")
+    elif joke_data.get("type") == "single":
+        print(f"\n Chiste del dia: {joke_data.get('joke')}")
+    else:
+        setup = joke_data.get("setup", "")
+        delivery = joke_data.get("delivery", "")
+        print(f"\n Chiste del dia: {setup} {delivery}".strip())
+except requests.RequestException:
+    print("\n No se pudo conectar a JokeAPI para obtener un chiste.")
