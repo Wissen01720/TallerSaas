@@ -1,10 +1,11 @@
 import requests
+import os
 from dotenv import load_dotenv
 load_dotenv()
 # ----------------------------------------------------------
 #  CONFIGURACIÓN: reemplazar TU_API_KEY con la que COPIAROOOOOOOOOOOOOOOON IMPORTANTISIMO
 # ----------------------------------------------------------
-API_KEY = "$APIKEY"
+API_KEY = os.getenv("APIKEY")
  
 # Pedir ciudad al usuario
 ciudad = input("\n Ingrese una ciudad: ")
@@ -45,3 +46,44 @@ print(f"Viento         : {viento} m/s")
 print(f"Descripción    : {descripcion}")
 print(f"Coordenadas    : {lat}, {lon}")
 print("═" * 45)
+
+
+import folium
+ 
+# Crear el mapa centrado en las coordenadas de la ciudad
+mapa = folium.Map(
+    location=[lat, lon],
+    zoom_start=12,
+    tiles="OpenStreetMap"
+)
+ 
+# Crear un popup con información del clima
+popup_texto = f"""
+    <div style='font-family:Arial; font-size:14px; padding:8px'>
+        <b>{ciudad}</b><br>
+        Temperatura: {temp} °C<br>
+        Humedad: {humedad}%<br>
+        {descripcion}
+    </div>
+"""
+ 
+# Agregar marcador con el popup
+folium.Marker(
+    location=[lat, lon],
+    popup=folium.Popup(popup_texto, max_width=250),
+    tooltip=f"{ciudad} — Click para ver clima",
+    icon=folium.Icon(color="blue", icon="cloud", prefix="fa")
+).add_to(mapa)
+ 
+# Agregar un círculo para marcar el área
+folium.Circle(
+    location=[lat, lon],
+    radius=5000,
+    color="#2563EB",
+    fill=True,
+    fill_opacity=0.1
+).add_to(mapa)
+ 
+# Guardar el mapa como HTML
+mapa.save("mapa_clima.html")
+print("\n ¡Mapa generado! Abrir el archivo mapa_clima.html en tu navegador.")
